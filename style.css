@@ -1,113 +1,122 @@
 body {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
   color: #2F4F4F;
   line-height: 1.6;
 }
 
-header {
-  background: #006400;
-  color: white;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-nav h1 {
+h1, h2, h3 {
   font-family: 'Merriweather', serif;
-  margin: 0;
+  color: #006400;
 }
 
-nav p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #C0C0C0;
+nav {
+  position: fixed;
+  width: 100%;
+  background: #2F4F4F;
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin-top: 0.5rem;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul li a {
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-main {
-  padding: 6rem 2rem 3rem;
+.hero {
+  padding-top: 80px;
+  text-align: center;
+  background-color: #C0C0C0;
+  padding-bottom: 30px;
 }
 
-section {
-  margin-bottom: 3rem;
+.content-block {
+  padding: 40px 80px;
+  border-bottom: 1px solid #eee;
 }
 
-h2 {
-  font-family: 'Merriweather', serif;
-  color: #006400;
-  margin-top: 0;
-}
-
-.table-wrapper {
+.comparison-table,
+.scroll-table {
   overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
-table th, table td {
+th, td {
   border: 1px solid #ccc;
-  padding: 0.75rem;
+  padding: 10px;
   text-align: left;
 }
 
-.icons li {
-  margin-bottom: 0.5rem;
-}
-
-.grid {
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-.timeline li {
-  margin-bottom: 0.5rem;
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.budget {
-  width: 100%;
-  border: 1px solid #ccc;
-  margin-top: 1rem;
-}
-
-.budget th, .budget td {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-}
-
-blockquote {
-  font-style: italic;
-  border-left: 4px solid #006400;
-  padding-left: 1rem;
-  margin: 1rem 0;
+.timeline-step {
+  background: #f0f0f0;
+  padding: 15px;
+  border-left: 5px solid #006400;
+  flex: 1;
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
   background: #2F4F4F;
   color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .content-block {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline-step {
+    width: 100%;
+  }
 }
