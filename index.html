@@ -1,132 +1,753 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unlocking Circular Potential</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Slag Waste Management - Sarawak Project Proposal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header and Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Toggle */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 70px;
+        }
+
+        .section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            color: #fff;
+            text-align: center;
+            padding: 8rem 0 6rem;
+            margin-top: -70px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 2px;
+        }
+
+        /* Phase Cards */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .phase-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .phase-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .phase-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Budget Table */
+        .budget-container {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .budget-table {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+        }
+
+        .budget-table table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 500px;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 1.2rem 2rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .budget-table th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .budget-table td {
+            color: #555;
+        }
+
+        .budget-table tr:last-child {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .budget-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Stakeholders Grid */
+        .stakeholders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stakeholder-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #27ae60;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stakeholder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .stakeholder-icon {
+            font-size: 2rem;
+            color: #27ae60;
+            min-width: 50px;
+        }
+
+        .stakeholder-info h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .stakeholder-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Conclusion Section */
+        .conclusion {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .conclusion h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .conclusion p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .conclusion .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: rgba(44, 62, 80, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .phase-card,
+            .stakeholder-card {
+                margin: 0 1rem;
+            }
+
+            .budget-table {
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#executive">Executive Summary</a></li>
-        <li><a href="#problem">Problem Statement</a></li>
-        <li><a href="#objectives">Objectives</a></li>
-        <li><a href="#benefits">Benefits</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#budget">Budget</a></li>
-        <li><a href="#stakeholders">Stakeholders</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-recycle"></i> Sarawak Slag Project
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#phases" class="nav-link">Phases</a></li>
+                <li><a href="#budget" class="nav-link">Budget</a></li>
+                <li><a href="#stakeholders" class="nav-link">Stakeholders</a></li>
+                <li><a href="#conclusion" class="nav-link">Conclusion</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-    <div class="hero">
-      <h1>Unlocking Circular Potential</h1>
-      <h2>Turning Industrial Waste into Opportunity for a Greener Sarawak</h2>
-    </div>
-  </header>
 
-  <main>
-    <section id="executive" class="content-block">
-      <h3>Executive Summary</h3>
-      <p>Malaysia currently prohibits aluminium slag reuse due to its classification as hazardous (SW 104). This proposal calls for a feasibility study and regulatory reform for both steel slag and aluminium slag, using Taiwan as a benchmark for circular solutions.</p>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="container">
+                <h1 class="fade-in">Industrial Slag Waste Management</h1>
+                <p class="subtitle fade-in">Transforming Sarawak's Industrial Future</p>
+                <p class="tagline fade-in">"A resource, not a burden."</p>
+            </div>
+        </section>
 
-    <section id="problem" class="content-block">
-      <h3>Problem Statement</h3>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Malaysia</th>
-              <th>Taiwan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Classifies aluminium slag as Scheduled Waste</td><td>Classifies as industrial waste</td></tr>
-            <tr><td>Risk-averse regulations</td><td>Licensed recycling technologies</td></tr>
-            <tr><td>Lack of treatment facilities</td><td>Strong circular economy law</td></tr>
-            <tr><td>No market for byproducts</td><td>Construction sector reuse</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <!-- Project Phases -->
+        <section id="phases" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Project Phases</h2>
+                <div class="phases-grid">
+                    <div class="phase-card fade-in">
+                        <h3><i class="fas fa-search"></i> Phase 1: Research & Analysis (Month 1–2)</h3>
+                        <p>Study Taiwan's and others' technologies, regulations, and applications to establish a comprehensive foundation for the project.</p>
+                    </div>
+                    <div class="phase-card fade-in">
+                        <h3><i class="fas fa-cogs"></i> Phase 2: Technology Assessment (Month 2–3)</h3>
+                        <p>Evaluate existing technologies and identify the most suitable approaches for Sarawak's industrial context and environmental conditions.</p>
+                    </div>
+                    <div class="phase-card fade-in">
+                        <h3><i class="fas fa-flask"></i> Phase 3: Feasibility Modelling & Pilot Testing (Month 3–6)</h3>
+                        <p>Conduct lab testing, Life Cycle Assessment (LCA), and small-scale product trials to validate technical feasibility and environmental impact.</p>
+                    </div>
+                    <div class="phase-card fade-in">
+                        <h3><i class="fas fa-users"></i> Phase 4: Policy Drafting & Stakeholder Engagement (Month 6–8)</h3>
+                        <p>Develop reform recommendations, Standard Operating Procedures (SOPs), and host stakeholder workshops to ensure comprehensive buy-in.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="objectives" class="content-block">
-      <h3>Proposal Objectives</h3>
-      <ul class="objectives-list">
-        <li>📍 Evaluate current practices in Sarawak</li>
-        <li>🌐 Benchmark Taiwan and global models</li>
-        <li>♻️ Assess environmental and economic feasibility</li>
-        <li>📘 Develop policy roadmap and SOPs</li>
-      </ul>
-    </section>
+        <!-- Budget Overview -->
+        <section id="budget" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Budget Overview</h2>
+                <div class="budget-container fade-in">
+                    <div class="budget-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Estimated Cost (MYR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lab Testing (Aluminium & Steel)</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>International Expert Consultation</td>
+                                    <td>150,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Life Cycle Assessment (LCA)</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Pilot Design & Materials Study</td>
+                                    <td>200,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Stakeholder Workshops</td>
+                                    <td>80,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Final Policy & Reporting</td>
+                                    <td>30,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total</strong></td>
+                                    <td><strong>660,000</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="benefits" class="content-block">
-      <h3>Benefits of Approval</h3>
-      <div class="benefits-grid">
-        <div>♻️ Recover valuable aluminium</div>
-        <div>🌱 Reduce landfill impact</div>
-        <div>📉 Lower emissions and export costs</div>
-        <div>🧱 Supply cement and construction sectors</div>
-        <div>📑 Align with PCDS 2030 and circular economy goals</div>
-      </div>
-    </section>
+        <!-- Key Stakeholders -->
+        <section id="stakeholders" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Key Stakeholders</h2>
+                <div class="stakeholders-grid">
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Press Metal Bintulu</h4>
+                            <p>Aluminium smelting operations</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Sarawak Energy Berhad</h4>
+                            <p>Industrial waste generator</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Department of Environment (DOE)</h4>
+                            <p>Environmental regulatory oversight</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Natural Resources and Environment Board (NREB)</h4>
+                            <p>State-level environmental governance</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>UNIMAS & Curtin University</h4>
+                            <p>Research Partners</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Taiwan EPA & Circular Tech Providers</h4>
+                            <p>International expertise and technology</p>
+                        </div>
+                    </div>
+                    <div class="stakeholder-card fade-in">
+                        <div class="stakeholder-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stakeholder-info">
+                            <h4>Cement & Infrastructure Sector Buyers</h4>
+                            <p>End-user market for processed materials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="roadmap" class="content-block">
-      <h3>Implementation Roadmap</h3>
-      <div class="timeline">
-        <div class="timeline-step"><strong>Phase 1:</strong> Baseline Assessment (Month 1–2)</div>
-        <div class="timeline-step"><strong>Phase 2:</strong> Global Benchmarking (Month 2–4)</div>
-        <div class="timeline-step"><strong>Phase 3:</strong> Feasibility Testing (Month 3–6)</div>
-        <div class="timeline-step"><strong>Phase 4:</strong> Policy Drafting & Stakeholder Engagement (Month 6–8)</div>
-      </div>
-    </section>
+        <!-- Conclusion -->
+        <section id="conclusion" class="conclusion section">
+            <div class="container">
+                <h2 class="fade-in">Conclusion</h2>
+                <p class="fade-in">
+                    This proposal outlines a practical and cost-effective roadmap for turning steel and aluminium slag into a strategic asset for Sarawak. By leveraging Taiwan's model, Sarawak can protect the environment, boost local industry, and lead in industrial circular economy innovation.
+                </p>
+                <p class="quote fade-in">"A resource, not a burden."</p>
+            </div>
+        </section>
+    </main>
 
-    <section id="budget" class="content-block">
-      <h3>Budget Overview</h3>
-      <div class="scroll-table">
-        <table>
-          <thead>
-            <tr><th>Item</th><th>Estimated Cost (MYR)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Lab Testing & Analysis</td><td>100,000</td></tr>
-            <tr><td>International Consultation</td><td>150,000</td></tr>
-            <tr><td>Life Cycle Assessment</td><td>100,000</td></tr>
-            <tr><td>Pilot Design Study</td><td>200,000</td></tr>
-            <tr><td>Stakeholder Workshops</td><td>80,000</td></tr>
-            <tr><td>Final Reporting</td><td>30,000</td></tr>
-            <tr><th>Total</th><th>660,000</th></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Prepared by Sean | Kuching, Sarawak | 2025</p>
+        </div>
+    </footer>
 
-    <section id="stakeholders" class="content-block">
-      <h3>Key Stakeholders</h3>
-      <ul>
-        <li>Press Metal Bintulu</li>
-        <li>Department of Environment (DOE)</li>
-        <li>NREB Sarawak</li>
-        <li>UNIMAS / Curtin Sarawak</li>
-        <li>Sarawak Energy Berhad (SEB)</li>
-        <li>Taiwan EPA & Tech Providers</li>
-      </ul>
-    </section>
+    <script>
+        // JavaScript for interactive features
+        
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-    <section id="conclusion" class="content-block">
-      <h3>Conclusion</h3>
-      <p>This proposal is a practical, science-backed first step to position Sarawak as a leader in industrial green policy. By studying Taiwan's successful model and applying it locally, Sarawak can unlock value from waste while protecting its environment.</p>
-    </section>
-  </main>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
 
-  <footer>
-    <p>“A resource, not a burden.”</p>
-    <p>Prepared by Sean | Kuching, Sarawak | 2025</p>
-  </footer>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-  <script src="script.js"></script>
+        // Scrollspy - Active section highlighting
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            const scrollPosition = window.scrollY + 100; // Offset for fixed navbar
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const windowHeight = window.innerHeight;
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Navbar background on scroll
+        function handleNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, #2c3e50, #34495e)';
+                navbar.style.backdropFilter = 'none';
+            }
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            updateActiveNav();
+            handleScrollAnimations();
+            handleNavbarScroll();
+        });
+
+        window.addEventListener('load', () => {
+            updateActiveNav();
+            handleScrollAnimations();
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Stagger animation delays for fade-in elements
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Trigger initial animations
+            setTimeout(() => {
+                handleScrollAnimations();
+            }, 100);
+        });
+
+        // Add hover effects for interactive elements
+        document.querySelectorAll('.phase-card, .stakeholder-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click effect for budget table rows
+        document.querySelectorAll('.budget-table tr').forEach(row => {
+            row.addEventListener('click', function() {
+                this.style.background = '#e3f2fd';
+                setTimeout(() => {
+                    this.style.background = '';
+                }, 300);
+            });
+        });
+    </script>
 </body>
 </html>
