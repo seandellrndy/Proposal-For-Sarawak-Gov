@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unlocking Circular Potential</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header id="top">
+  <header>
     <nav>
-      <h1>Unlocking Circular Potential</h1>
-      <p>Turning Industrial Waste into Opportunity for a Greener Sarawak</p>
       <ul>
-        <li><a href="#summary">Executive Summary</a></li>
-        <li><a href="#problem">Problem</a></li>
+        <li><a href="#executive">Executive Summary</a></li>
+        <li><a href="#problem">Problem Statement</a></li>
         <li><a href="#objectives">Objectives</a></li>
         <li><a href="#benefits">Benefits</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
@@ -23,17 +21,21 @@
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
+    <div class="hero">
+      <h1>Unlocking Circular Potential</h1>
+      <h2>Turning Industrial Waste into Opportunity for a Greener Sarawak</h2>
+    </div>
   </header>
 
   <main>
-    <section id="summary">
-      <h2>Executive Summary</h2>
-      <p>Malaysia classifies aluminium slag as Scheduled Waste (SW 104) and lacks clear reuse policy for steel slag. This proposal recommends a feasibility study and policy reform, benchmarking Taiwan’s successful circular economy model.</p>
+    <section id="executive" class="content-block">
+      <h3>Executive Summary</h3>
+      <p>Malaysia currently prohibits aluminium slag reuse due to its classification as hazardous (SW 104). This proposal calls for a feasibility study and regulatory reform for both steel slag and aluminium slag, using Taiwan as a benchmark for circular solutions.</p>
     </section>
 
-    <section id="problem">
-      <h2>Problem Statement</h2>
-      <div class="table-wrapper">
+    <section id="problem" class="content-block">
+      <h3>Problem Statement</h3>
+      <div class="comparison-table">
         <table>
           <thead>
             <tr>
@@ -42,92 +44,86 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Slag = Scheduled Waste</td>
-              <td>Slag = Industrial Byproduct</td>
-            </tr>
-            <tr>
-              <td>No domestic treatment facilities</td>
-              <td>Licensed recycling tech</td>
-            </tr>
-            <tr>
-              <td>No downstream market</td>
-              <td>Reuse in cement/construction</td>
-            </tr>
-            <tr>
-              <td>Risk-averse regulation</td>
-              <td>Circular Economy Law</td>
-            </tr>
+            <tr><td>Classifies aluminium slag as Scheduled Waste</td><td>Classifies as industrial waste</td></tr>
+            <tr><td>Risk-averse regulations</td><td>Licensed recycling technologies</td></tr>
+            <tr><td>Lack of treatment facilities</td><td>Strong circular economy law</td></tr>
+            <tr><td>No market for byproducts</td><td>Construction sector reuse</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="objectives">
-      <h2>Proposal Objectives</h2>
-      <ul class="icons">
-        <li>🧪 Evaluate practices in Sarawak</li>
-        <li>🌍 Benchmark Taiwan & global models</li>
-        <li>📊 Assess feasibility (env + econ)</li>
-        <li>🧭 Develop SOPs and policy roadmap</li>
+    <section id="objectives" class="content-block">
+      <h3>Proposal Objectives</h3>
+      <ul class="objectives-list">
+        <li>📍 Evaluate current practices in Sarawak</li>
+        <li>🌐 Benchmark Taiwan and global models</li>
+        <li>♻️ Assess environmental and economic feasibility</li>
+        <li>📘 Develop policy roadmap and SOPs</li>
       </ul>
     </section>
 
-    <section id="benefits">
-      <h2>Benefits of Approval</h2>
-      <div class="grid">
-        <div>♻️ Recover valuable aluminium & steel</div>
+    <section id="benefits" class="content-block">
+      <h3>Benefits of Approval</h3>
+      <div class="benefits-grid">
+        <div>♻️ Recover valuable aluminium</div>
         <div>🌱 Reduce landfill impact</div>
-        <div>📉 Lower emissions & costs</div>
-        <div>🧱 Supply cement/construction industry</div>
-        <div>📑 Align with PCDS 2030 goals</div>
+        <div>📉 Lower emissions and export costs</div>
+        <div>🧱 Supply cement and construction sectors</div>
+        <div>📑 Align with PCDS 2030 and circular economy goals</div>
       </div>
     </section>
 
-    <section id="roadmap">
-      <h2>Implementation Roadmap</h2>
-      <ul class="timeline">
-        <li><strong>Phase 1:</strong> Baseline Assessment (Month 1–2)</li>
-        <li><strong>Phase 2:</strong> Global Benchmarking (Month 2–4)</li>
-        <li><strong>Phase 3:</strong> Feasibility & Pilot Testing (Month 3–6)</li>
-        <li><strong>Phase 4:</strong> Policy Drafting & Engagement (Month 6–8)</li>
-      </ul>
+    <section id="roadmap" class="content-block">
+      <h3>Implementation Roadmap</h3>
+      <div class="timeline">
+        <div class="timeline-step"><strong>Phase 1:</strong> Baseline Assessment (Month 1–2)</div>
+        <div class="timeline-step"><strong>Phase 2:</strong> Global Benchmarking (Month 2–4)</div>
+        <div class="timeline-step"><strong>Phase 3:</strong> Feasibility Testing (Month 3–6)</div>
+        <div class="timeline-step"><strong>Phase 4:</strong> Policy Drafting & Stakeholder Engagement (Month 6–8)</div>
+      </div>
     </section>
 
-    <section id="budget">
-      <h2>Budget Overview</h2>
-      <table class="budget">
-        <tr><th>Item</th><th>Estimated Cost (MYR)</th></tr>
-        <tr><td>Lab Testing & Analysis</td><td>100,000</td></tr>
-        <tr><td>International Consultation</td><td>150,000</td></tr>
-        <tr><td>Life Cycle Assessment</td><td>100,000</td></tr>
-        <tr><td>Pilot Design Study</td><td>200,000</td></tr>
-        <tr><td>Stakeholder Workshops</td><td>80,000</td></tr>
-        <tr><td>Final Reporting</td><td>30,000</td></tr>
-        <tr><th>Total</th><th>660,000</th></tr>
-      </table>
+    <section id="budget" class="content-block">
+      <h3>Budget Overview</h3>
+      <div class="scroll-table">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Estimated Cost (MYR)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lab Testing & Analysis</td><td>100,000</td></tr>
+            <tr><td>International Consultation</td><td>150,000</td></tr>
+            <tr><td>Life Cycle Assessment</td><td>100,000</td></tr>
+            <tr><td>Pilot Design Study</td><td>200,000</td></tr>
+            <tr><td>Stakeholder Workshops</td><td>80,000</td></tr>
+            <tr><td>Final Reporting</td><td>30,000</td></tr>
+            <tr><th>Total</th><th>660,000</th></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section id="stakeholders">
-      <h2>Key Stakeholders</h2>
+    <section id="stakeholders" class="content-block">
+      <h3>Key Stakeholders</h3>
       <ul>
         <li>Press Metal Bintulu</li>
         <li>Department of Environment (DOE)</li>
         <li>NREB Sarawak</li>
         <li>UNIMAS / Curtin Sarawak</li>
         <li>Sarawak Energy Berhad (SEB)</li>
-        <li>Taiwan EPA & tech providers</li>
+        <li>Taiwan EPA & Tech Providers</li>
       </ul>
     </section>
 
-    <section id="conclusion">
-      <h2>Conclusion</h2>
-      <blockquote>“A resource, not a burden.”</blockquote>
-      <p>This proposal offers a science-backed step for Sarawak to lead in circular industrial policy. Inspired by Taiwan, we aim to unlock waste value while protecting our environment.</p>
+    <section id="conclusion" class="content-block">
+      <h3>Conclusion</h3>
+      <p>This proposal is a practical, science-backed first step to position Sarawak as a leader in industrial green policy. By studying Taiwan's successful model and applying it locally, Sarawak can unlock value from waste while protecting its environment.</p>
     </section>
   </main>
 
   <footer>
+    <p>“A resource, not a burden.”</p>
     <p>Prepared by Sean | Kuching, Sarawak | 2025</p>
   </footer>
 
